@@ -330,7 +330,7 @@
     top: 3rem;
     background-color: $color;
     border: solid 0.3rem $colorBorde;
-    border-radius: 2rem;
+    border-radius: 1rem;
     padding: 4rem 2rem 2rem 2rem;
     text-align: $textAling;
     height: 40rem;
@@ -343,13 +343,18 @@
     }
 
 
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    // -ms-overflow-style: none;
+    // scrollbar-width: none;
 
-    &::-webkit-scrollbar{
-        opacity: 1;
-        width: .5rem;
-    }
+    // &::-webkit-scrollbar{
+    //     opacity: 1;
+    //     width: .5rem;
+    // }
+
+    // &::-webkit-scrollbar-thumb{
+    //     background: $colorBorde;
+    //     border-radius: 1rem;
+    // }
 
 }
 
@@ -525,18 +530,18 @@
                 color: darken($color, 20);
             }
 
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+            // -ms-overflow-style: none;
+            // scrollbar-width: none;
 
-            &::-webkit-scrollbar{
-                opacity: 1;
-                width: .5rem;
-            }
+            // &::-webkit-scrollbar{
+            //     opacity: 1;
+            //     width: .5rem;
+            // }
 
-            &::-webkit-scrollbar-thumb{
-                background: v.$blanco;
-                border-radius: 1rem;
-            }
+            // &::-webkit-scrollbar-thumb{
+            //     background: $color;
+            //     border-radius: 1rem;
+            // }
 
         }
     }
@@ -656,18 +661,18 @@
             padding-bottom: 2rem;
             overflow-y: scroll;
 
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+            // -ms-overflow-style: none;
+            // scrollbar-width: none;
 
-            &::-webkit-scrollbar{
-                opacity: 1;
-                width: .5rem;
-            }
+            // &::-webkit-scrollbar{
+            //     opacity: 1;
+            //     width: .5rem;
+            // }
 
-            &::-webkit-scrollbar-thumb{
-                background: v.$blanco;
-                border-radius: 1rem;
-            }
+            // &::-webkit-scrollbar-thumb{
+            //     background: v.$blanco;
+            //     border-radius: 1rem;
+            // }
 
         }
     }
