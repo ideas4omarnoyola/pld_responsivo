@@ -40,6 +40,11 @@ function asignarLocation(){
     scorm.set('cmi.core.lesson_location', noPagina);
 }
 
+function asignarIntento(comentario) {
+    scorm.set("cmi.suspend_data", comentario);
+    scorm.save();
+}
+
 function verificarLocation(){
 
     const status = scorm.get('cmi.core.lesson_status');

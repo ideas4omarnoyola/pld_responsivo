@@ -1,4 +1,4 @@
-let intentosEvaluación = 1;
+let intentosEvaluacion = 1;
 
 class EvaluacionFinal{
 
@@ -289,7 +289,6 @@ function bloquearRespuesta(div){
 function calificacionFinal(evaluacion){
 
     const btnEvaluar = document.querySelector('#evaluarCuestionario');
-    const calificacion = document.querySelector('#calificacion');
     const noPreguntas = 10;
 
     const intro = document.querySelector('#intro-evaluacion');
@@ -311,20 +310,37 @@ function calificacionFinal(evaluacion){
     
             const promedio = parseInt((evaluacion.aciertos * 100) / noPreguntas);
             
-            if(promedio >= 80){
+            if(promedio >= 80 && intentosEvaluacion <= 2){
                 const retro = document.querySelector('#retro-positiva');
+                const calificacion = document.querySelector('#calificacion');
 
                 retroFinal(retro);
                 calificacion.textContent = promedio;
                 
                 //Registrar estado
                 statusCurso('passed');
+                asignarIntento(`${intentosEvaluacion} ${intentosEvaluacion > 1 ? 'intentos' : 'intento'}`);
 
                 //registrar promedio
                 asignarCalificación(promedio);
             }
-            else{
+            else if (intentosEvaluacion < 2){
                 const retro = document.querySelector('#retro-negativa');
+                const calificacion = document.querySelector('#calificacion-parcial');
+                calificacion.textContent = promedio;
+
+                intentosEvaluacion++;
+                retroFinal(retro);
+            }
+            else{
+                const retro = document.querySelector('#retro-reprobado');
+                const calificacion = document.querySelector('#calificacion-final');
+
+                calificacion.textContent = promedio;
+
+                asignarIntento(`${intentosEvaluacion} ${intentosEvaluacion > 1 ? 'intentos' : 'intento'}`);
+                
+                intentosEvaluacion++;
                 retroFinal(retro);
             }   
         });
