@@ -323,13 +323,18 @@ function calificacionFinal(evaluacion){
 
                 //registrar promedio
                 asignarCalificación(promedio);
+                asignarGrado('Aprobado');
             }
             else if (intentosEvaluacion < 2){
                 const retro = document.querySelector('#retro-negativa');
                 const calificacion = document.querySelector('#calificacion-parcial');
                 calificacion.textContent = promedio;
 
+                asignarIntento(`${intentosEvaluacion} ${intentosEvaluacion > 1 ? 'intentos' : 'intento'}`);
+
                 intentosEvaluacion++;
+                statusCurso('completed');
+                asignarCalificación(promedio);
                 retroFinal(retro);
             }
             else{
@@ -341,6 +346,9 @@ function calificacionFinal(evaluacion){
                 asignarIntento(`${intentosEvaluacion} ${intentosEvaluacion > 1 ? 'intentos' : 'intento'}`);
                 
                 intentosEvaluacion++;
+                statusCurso('completed');
+                asignarCalificación(promedio);
+                asignarGrado('Reprobado');
                 retroFinal(retro);
             }   
         });

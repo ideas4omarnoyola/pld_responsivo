@@ -45,6 +45,10 @@ function asignarIntento(comentario) {
     scorm.save();
 }
 
+function asignarGrado(grado) {
+    scorm.set('cmi.comments', grado);
+}
+
 function verificarLocation(){
 
     const status = scorm.get('cmi.core.lesson_status');

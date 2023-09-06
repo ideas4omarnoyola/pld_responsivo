@@ -175,9 +175,6 @@ function actualizarStatus(){
     if(noPagina != totalPaginas -1){
         statusCurso('incomplete');
     }
-    else{
-        statusCurso('completed');
-    }
 }
 
 //Parpadear el boton al final de la página
