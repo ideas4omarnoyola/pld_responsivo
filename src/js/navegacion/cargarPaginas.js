@@ -49,6 +49,7 @@ jQuery(function($){
     
     //Visualizar página actual
     visualizarPagina();
+    asignarGrado('unknown');
 
     //Instanciar Clase Botones Navegacion
     const btnNav = new BotonesNavegacion;

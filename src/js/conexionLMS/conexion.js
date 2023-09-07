@@ -1,67 +1,67 @@
-//Conexión a Moodle
-const scorm = pipwerks.SCORM;
-
-window.onload = function(){
-    conectarLMS();
-    verificarLocation();
+// *Conectarse al LMS
+window.onload = function(){    
     calcularTiempo();
+
+    const initialized = initializeCommunication();
+    if (initialized === "true") {
+        // La comunicación se ha iniciado correctamente
+        // Puedes continuar con tu curso
+        console.log('Conectado con el LMS corretamente');
+        verificarLocation();
+        calcularTiempo();
+        storeDataValue("cmi.score.scaled", .85);
+    } else {
+        // La comunicación no se pudo iniciar, maneja el error
+        console.log('Ha habído un error');
+    }
 }
 
+// *Desconectarse del LMS
 window.onunload = function(){
-    registrarTiempo(tiempo);
-    cerrarConexion();
-}
-
-function conectarLMS(){
-    scorm.version = '1.2';
-    scorm.init();
-
+    const terminated = terminateCommunication();
+    if (terminated === "true") {
+        registrarTiempo(tiempo);
+        storeDataValue("cmi.exit", "normal");
+        // La comunicación se ha terminado correctamente
+    } else {
+        // La comunicación no se pudo terminar, maneja el error
+    }
 }
 
 function statusCurso(estado){
-    scorm.set("cmi.core.lesson_status", estado);
-}
-
-function cerrarConexion(){
-    scorm.set("cmi.core.exit", "suspend");
-    scorm.quit();
+    storeDataValue("cmi.completion_status", estado);
 }
 
 function asignarCalificación(calificacion){
-    scorm.set("cmi.core.score.raw", calificacion);
+    calificacion = calificacion / 100;
+    storeDataValue("cmi.score.scaled", calificacion);
 }
 
 function registrarTiempo(tiempo){
-    console.log(tiempo);
-    scorm.set("cmi.core.session_time", tiempo);
+    storeDataValue("cmi.session_time", tiempo);
 }
 
 function asignarLocation(){
-    scorm.set('cmi.core.lesson_location', noPagina);
+    storeDataValue('cmi.location', noPagina);
 }
 
 function asignarIntento(comentario) {
-    scorm.set("cmi.suspend_data", comentario);
-    scorm.save();
+    storeDataValue("cmi.comments_from_learner.n.comment", comentario);
 }
 
 function asignarGrado(grado) {
-    scorm.set('cmi.comments', grado);
+    storeDataValue('cmi.success_status', grado);
 }
 
 function verificarLocation(){
-
-    const status = scorm.get('cmi.core.lesson_status');
+    const status = retrieveDataValue('cmi.completion_status');
 
     switch(status){
         case 'incomplete':
-            const location = scorm.get('cmi.core.lesson_location');
+            const location = retrieveDataValue('cmi.location');
             noPagina = location;
             break;
         case 'completed':
-            noPagina = 29;
-            break;
-        case 'passed':
             noPagina = 29;
             break;
         default:
