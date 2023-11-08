@@ -1,7 +1,7 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
 
-.menu__side{
+.menu__side {
 
     width: 8rem;
     height: 100vh;
@@ -14,38 +14,38 @@
     overflow: hidden;
     // border-right: 2rem solid v.$azul1;
     transition: all .3s cubic-bezier(0.39, 0.575, 0.565, 1);
-    box-shadow: 14px -1px 4px -11px rgba(0,0,0,0.59);
+    box-shadow: 14px -1px 4px -11px rgba(0, 0, 0, 0.59);
 
-    .name__page{
+    .name__page {
         color: v.$blanco;
         padding: 2rem 3rem;
         display: flex;
         align-items: center;
     }
 
-    i{
+    i {
         margin-right: 3.6rem;
     }
 
-    &.side__move{
+    &.side__move {
         width: 25rem;
     }
 
-    @include m.tablet{
+    @include m.escritorioHD {
         left: -25rem;
         width: 25rem;
 
-        &.side__move{
+        &.side__move {
             left: 0rem;
         }
     }
 }
 
-.barra__progreso{
+.barra__progreso {
     height: 6rem;
     padding: 2rem 3rem;
 
-    .barra{
+    .barra {
         width: 100%;
         height: .3rem;
         background: v.$gris1;
@@ -53,11 +53,11 @@
         position: relative;
         display: none;
 
-        &.barra_ver{
+        &.barra_ver {
             display: block;
         }
 
-        .porcentaje{
+        .porcentaje {
             position: absolute;
             background: v.$blanco;
             height: 100%;
@@ -67,13 +67,13 @@
         }
     }
 
-    #progreso__mensaje{
+    #progreso__mensaje {
         font-size: 1.8rem;
         color: v.$blanco;
     }
 }
 
-.options__menu{
+.options__menu {
     margin-top: 2rem;
     padding: 2rem 3rem;
     height: 50%;
@@ -81,17 +81,17 @@
     overflow-y: scroll;
     transition: all .3s ease;
 
-    &::-webkit-scrollbar{
+    &::-webkit-scrollbar {
         opacity: 0;
     }
-    
-    &:hover{
-        &::-webkit-scrollbar{
+
+    &:hover {
+        &::-webkit-scrollbar {
             opacity: 1;
             width: .5rem;
         }
-    
-        &::-webkit-scrollbar-thumb{
+
+        &::-webkit-scrollbar-thumb {
             background: v.$blanco;
             border-radius: 1rem;
         }
@@ -100,7 +100,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
 
-    a{
+    a {
         color: v.$gris1;
         opacity: 60%;
         cursor: default;
@@ -108,17 +108,17 @@
         position: relative;
         transition: all .3s ease;
 
-        &:hover{
+        &:hover {
             color: v.$blanco;
             opacity: 100%;
             cursor: pointer;
         }
 
-        &.select{
+        &.select {
             color: v.$blanco;
             transition: all .3s ease;
 
-            &::before{
+            &::before {
                 content: '';
                 width: .3rem;
                 height: 80%;
@@ -129,17 +129,17 @@
             }
         }
 
-        .option{
+        .option {
             padding: 2rem 0;
             display: flex;
             align-items: center;
             position: relative;
             transition: all .3s ease;
 
-            h4{
+            h4 {
                 font-weight: 300;
 
-                &.ocultar{
+                &.ocultar {
                     display: none;
                 }
             }

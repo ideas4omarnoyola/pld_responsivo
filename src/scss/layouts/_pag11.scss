@@ -1,130 +1,134 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
 
-#cont-intro11{
+#cont-intro11 {
 
     display: flex;
     justify-content: flex-end;
     background: v.$azul1;
 
-    .instrucciones-mano{
+    .instrucciones-mano {
         border-radius: 0;
         width: 50%;
 
-        @include m.tablet{
+        @include m.tablet {
             width: 100%;
         }
     }
 }
 
-#cont-tarjetas-flip{
+#cont-tarjetas-flip {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     padding: 4rem 0;
 
-    @include m.tablet{
+    @include m.tablet {
         justify-content: center;
     }
 
-    .cards{
+    .cards {
         width: 30%;
         height: 55rem;
         position: relative;
         cursor: pointer;
 
-        @include m.escritorioHD{
+        @include m.escritorioHD {
             height: 60rem
         }
 
-        @include m.escritorio{
+        @include m.escritorio {
             width: 48%;
             height: 40rem;
             margin-bottom: 3.2rem;
         }
 
-        @include m.tablet{
+        @include m.tablet {
             width: 65%;
         }
 
-        @include m.telefono{
+        @include m.telefono {
             width: 95%;
         }
 
-        &#flip1{
+        &#flip1 {
             @include m.flip-cards(v.$azul1, fuerte);
         }
-        
-        &#flip2{
+
+        &#flip2 {
             @include m.flip-cards(v.$verde, fuerte);
         }
-        
-        &#flip3{
+
+        &#flip3 {
             @include m.flip-cards(v.$dorado, claro);
         }
 
-        .cont-titulo{
+        .cont-titulo {
             padding: 2rem 3rem;
             height: 8rem;
             display: flex;
             justify-content: center;
             align-items: center;
 
-            h3{
+            h3 {
                 color: v.$blanco;
                 text-align: center;
             }
         }
 
-        
-        .caras{
+
+        .caras {
             position: absolute;
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
             backface-visibility: hidden;
-            transition: all 1s ease;            
+            transition: all 1s ease;
         }
-        
-        .front{
+
+        .front {
             transform: perspective(50rem) rotateY(0deg);
 
-            .cont-imagen{
+            .cont-imagen {
                 width: 60%;
                 height: 20rem;
                 margin: 0 auto;
 
-                @include m.escritorio{
+                @include m.escritorio {
                     height: 12rem;
                 }
             }
 
-            .cont-mensaje-front{
-                padding: 2rem;
+            .cont-mensaje-front {
+                padding: 1rem;
                 text-align: center;
                 font-weight: 700;
+
+                p {
+                    font-size: 1.4rem;
+                }
             }
         }
 
-        .back{
+        .back {
 
             transform: perspective(50rem) rotateY(180deg);
 
-            .cont-mensaje-back{
+            .cont-mensaje-back {
                 padding: 2rem;
                 text-align: center;
                 line-height: 1.6;
             }
         }
 
-        &.click{
-            .front{
+        &.click {
+            .front {
                 transform: perspective(50rem) rotateY(180deg);
             }
-        
-            .back{
+
+            .back {
                 transform: perspective(50rem) rotateY(360deg);
             }
         }

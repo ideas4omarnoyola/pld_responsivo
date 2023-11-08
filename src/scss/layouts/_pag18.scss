@@ -1,74 +1,83 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
 
-#intro-cuestionario{
+#intro-cuestionario {
 
-    &.desaparece{
+    &.desaparece {
         display: none;
     }
 
-    .caja{
+    .caja {
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
         position: relative;
 
-        @include m.escritorioHD{
+        @include m.escritorioHD {
             background: v.$azulRey;
         }
 
-        &::after{
+        &::after {
             content: '';
             position: absolute;
             width: 100%;
-            height: 70%;
+            height: 90%;
             bottom: 0;
             left: 0;
             background: v.$azulRey;
             z-index: -1;
 
-            @include m.escritorioHD{
+            @include m.escritorioHD {
                 display: none;
             }
         }
 
-        .cont-imagen{
+        .cont-imagen {
             width: 30%;
 
-            
-            @include m.tablet{
+
+            @include m.tablet {
                 width: 50%;
                 margin: 0 auto;
-                order: 2;    
+                order: 2;
             }
         }
 
-        .parrafo{
+        .parrafo {
             padding: 2rem;
             width: 60%;
             align-self: flex-end;
             margin-bottom: 4rem;
 
-            @include m.tablet{
+            @include m.tablet {
                 width: 90%;
                 margin: 0 auto;
-                order: 1;                
+                order: 1;
             }
 
-            p{
+            p {
                 text-align: center;
                 font-size: 2.4rem;
                 color: v.$blanco;
 
-                @include m.escritorioHD{
+                @include m.escritorioHD {
                     font-size: 2rem;
                 }
+            }
+
+            .nota {
+                padding: 2rem;
+                background: v.$amarillo;
+                font-size: 1.4rem;
+                width: 80%;
+                margin: 0 auto;
+                margin-top: 2rem;
             }
         }
     }
 
-    .cont-boton{
+    .cont-boton {
         width: 100%;
         display: flex;
         justify-content: center;
@@ -76,39 +85,39 @@
         padding: 2rem;
         background: v.$grisFondo;
 
-        a{
+        a {
             @include m.boton(v.$amarillo);
         }
     }
 }
 
-#actividad-cuestionario{
+#actividad-cuestionario {
     display: none;
 
-    &.ver{
+    &.ver {
         display: block;
     }
 
-    .cont-preguntas{
+    .cont-preguntas {
 
         display: none;
 
-        &.visualizar{
+        &.visualizar {
             display: block;
         }
 
-        .pregunta{
+        .pregunta {
 
             display: flex;
             justify-content: space-between;
             align-items: center;
             height: 12rem;
 
-            @include m.escritorio{
+            @include m.escritorio {
                 height: 14rem;
             }
 
-            .cont-numero{
+            .cont-numero {
                 width: 10%;
                 height: 100%;
                 display: flex;
@@ -116,13 +125,13 @@
                 align-items: center;
                 background: v.$azulRey;
                 color: v.$blanco;
-                
-                h3{
+
+                h3 {
                     font-size: 2.8rem;
                 }
             }
 
-            .cont-pregunta{
+            .cont-pregunta {
                 width: 90%;
                 height: 100%;
                 display: flex;
@@ -130,48 +139,48 @@
                 align-items: center;
                 background: v.$azulClaro2;
 
-                p{
+                p {
                     padding: 2rem;
                     font-weight: 500;
 
-                    @include m.escritorio{
+                    @include m.escritorio {
                         font-size: 1.4rem;
                     }
                 }
             }
         }
 
-        .respuestas{
+        .respuestas {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             padding: 2rem;
 
-            .respuestas-caja{
+            .respuestas-caja {
                 width: 18rem;
                 height: 4rem;
                 display: flex;
                 justify-content: center;
-                align-items: center; 
+                align-items: center;
                 color: v.$blanco;
                 background: v.$azulRey;
                 margin-bottom: 3rem;
-                cursor: pointer; 
+                cursor: pointer;
                 transition: all .3s ease;
-                
-                &:hover{
-                    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+
+                &:hover {
+                    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
                     transform: scale(1.05);
                 }
 
-                &.fondoCorrecto{
+                &.fondoCorrecto {
                     background: v.$verde;
                     color: v.$blanco;
                     cursor: default;
                 }
-                
-                &.fondoIncorrecto{
+
+                &.fondoIncorrecto {
                     background: v.$rojo2;
                     color: v.$blanco;
                     cursor: default;
@@ -181,46 +190,44 @@
     }
 }
 
-#retroActividad1{
+#retroActividad1 {
 
     display: none;
     background: v.$azul2;
 
-    &.visualizar{
+    &.visualizar {
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;        
+        flex-wrap: wrap;
     }
 
-    @include m.tablet{
+    @include m.tablet {}
 
-    }
-
-    .cont-imagen{
+    .cont-imagen {
         width: 30%;
         margin: 0;
 
-        @include m.tablet{
+        @include m.tablet {
             width: 50%;
             margin: 0 auto;
-            order: 2;   
+            order: 2;
         }
     }
 
-    .cont-mensaje{
+    .cont-mensaje {
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 2rem;
         width: 60%;
 
-        @include m.tablet{
+        @include m.tablet {
             width: 90%;
             margin: 0 auto;
-            order: 1;   
+            order: 1;
         }
 
-        p{
+        p {
             text-align: center;
             color: v.$blanco;
             font-size: 2.4rem;

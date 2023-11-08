@@ -3,128 +3,108 @@
 
 
 
-#instrucciones-pag20{
+#instrucciones-pag20 {
     background: v.$azulClaro1;
     height: 10rem;
     display: flex;
+    align-items: center;
     padding: 2rem;
+    gap: 2rem;
 
-    @include m.telefono{
-        padding: 1rem;
+    .img-clic {
+        width: 6rem;
+        height: 6rem;
     }
 
-    p{
-        margin: auto;
+    p {
+        width: 80%;
 
-        @include m.tablet{
-            margin-left: 2rem;
-        }
-
-        @include m.telefono{
-            margin-left: 0;
+        @include m.telefono {
+            font-size: 1.2rem;
         }
     }
 
-    img{
-        @include m.telefono{
-            width: 0;
-            height: 0;
-        }
-    }
 }
 
-#flipCards-pag09{
+#flipCards-pag09 {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
     padding: 4rem 0;
 
-    .cards{
+    .cards {
         width: 22rem;
         height: 40rem;
         position: relative;
         cursor: pointer;
+        margin-bottom: 8rem;
 
-        &#flip1{
+        &#flip1 {
             @include m.flip-cardsPag20(fuerte, v.$azul2);
         }
-        
-        &#flip2{
-            @include m.flip-cardsPag20(fuerte, v.$naranja);
-            top: 5rem;
 
-            @include m.escritorioHD{
-                top: 0
+        &#flip2 {
+            @include m.flip-cardsPag20(fuerte, v.$naranja);
+            top: 4rem;
+
+            @include m.escritorio {
+                top: 0;
             }
         }
-        &#flip3{
+
+        &#flip3 {
             @include m.flip-cardsPag20(fuerte, v.$amarilloPag20);
         }
-        &#flip4{
+
+        &#flip4 {
             @include m.flip-cardsPag20(fuerte, v.$verde);
-            top: 5rem;
+            top: 4rem;
 
-            @include m.escritorioHD{
-                top: 0;
-            }
-
-            @include m.tablet{
-                top: 3rem;
-            }
-
-            @include m.telefono{
+            @include m.escritorio {
                 top: 0;
             }
         }
-        &#flip5{
+
+        &#flip5 {
             @include m.flip-cardsPag20(fuerte, v.$azulRey);
-
-            @include m.escritorioHD{
-                top: 3rem;
-            }
-
-            @include m.telefono{
-                top: 0;
-            }
         }
-        
-        .caras{
+
+        .caras {
             position: absolute;
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
-            transition: all 1s ease;            
+            transition: all 1s ease;
         }
-        
-        .front{
+
+        .front {
             transform: perspective(50rem) rotateY(0deg);
 
-            .cont-imagen{
+            .cont-imagen {
                 width: 100%;
                 height: 100%;
-                
+
             }
         }
 
-        .back{
+        .back {
             transform: perspective(50rem) rotateY(180deg);
 
-            .cont-mensaje-back{
+            .cont-mensaje-back {
                 padding: 2rem;
                 text-align: justify;
             }
         }
 
-        &.click{
-            .front{
+        &.click {
+            .front {
                 transform: perspective(50rem) rotateY(180deg);
             }
-        
-            .back{
+
+            .back {
                 transform: perspective(50rem) rotateY(360deg);
             }
         }
     }
 }
-

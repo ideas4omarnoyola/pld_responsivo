@@ -2,7 +2,7 @@
 @use '../base/mixins' as m;
 
 
-.cont-info03{
+.cont-info03 {
 
     display: flex;
     justify-content: space-between;
@@ -13,45 +13,37 @@
     padding-top: 6rem;
     position: relative;
 
-    h4{
+    h4 {
         text-align: center;
         position: absolute;
     }
 
-    #h4_1{
+    #h4_1 {
         top: 2rem;
         left: 12rem;
 
-        @include m.escritorioHD{
-            left: 6rem;
-        }
-
-        @include m.escritorio{
+        @include m.escritorioHD {
             position: static;
             color: v.$blanco;
             padding-top: 2rem;
         }
     }
-    
-    #h4_2{
+
+    #h4_2 {
         top: 2rem;
         left: 70%;
 
-        @include m.escritorioHD{
-            left: 68%;
-        }
-
-        @include m.escritorio{
+        @include m.escritorioHD {
             position: static;
             padding-top: 2rem;
         }
     }
 
-    @include m.escritorio{
+    @include m.escritorioHD {
         justify-content: center;
     }
 
-    p{
+    p {
         padding: 6rem 3rem;
         color: v.$blanco;
         font-size: 1.7rem;
@@ -60,53 +52,55 @@
         text-align: center;
     }
 
-    .tarjetas03{
+    .tarjetas03 {
         width: 32%;
-        height: 60rem;
+        min-height: 60rem;
+        height: auto;
         border-radius: 2rem;
         overflow: hidden;
         z-index: 1;
 
-        @include m.escritorioHD{
-            height: 80rem;
+        @include m.escritorioHD {
+            width: 60%;
+            margin-bottom: 2rem;
+            min-height: 30rem;
         }
 
-        @include m.escritorio{
+        @include m.escritorio {
             width: 75%;
             height: auto;
-            margin-bottom: 2rem;
         }
 
-        @include m.telefono{
+        @include m.telefono {
             width: 100%;
         }
 
-        h4{
+        h4 {
             position: absolute;
             text-align: center;
             font-size: 2rem;
             padding-bottom: 3rem;
         }
 
-        .cont-tarjeta{
+        .cont-tarjeta {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
             flex-wrap: wrap;
 
-            .imagenes{
+            .imagenes {
                 width: 100%;
                 height: 25rem;
 
-                .cont-imagen{
+                .cont-imagen {
                     width: 100%;
                     height: 100%;
                     display: flex;
                     align-items: flex-end;
                     justify-content: center;
 
-                    img{
+                    img {
                         width: 60%;
                         height: 80%;
                     }
@@ -114,57 +108,48 @@
             }
         }
 
-        &#tarjeta01{
+        &#tarjeta01 {
 
             background: v.$verdeMilitar;
 
-            .cont-tarjeta{
+            .cont-tarjeta {
 
-                .imagenes{
+                .imagenes {
                     background: v.$verdeFuertePag03;
                 }
             }
         }
-        
-        &#tarjeta02{
 
-            position: relative;
+        &#tarjeta02 {
             background: v.$azulPag03;
 
-            p{
-                margin-bottom: 15rem;
+            .imagenes {
 
-                @include m.telefono{
-                    margin-bottom: 18rem;
-                } 
-            }
-
-            .imagenes{
-                position: absolute;
-                width: 25rem;
-                height: 25rem;
-                bottom: -2rem;
-                right: 0;
+                .cont-imagen {
+                    width: 15rem;
+                    height: 15rem;
+                    margin: 0 auto;
+                }
             }
         }
-        
-        &#tarjeta03{
 
-            
+        &#tarjeta03 {
+
+
             background: v.$verdeClaroPag03;
 
-            .cont-tarjeta{
+            .cont-tarjeta {
 
-                p{
+                p {
                     color: v.$colorFuente;
                 }
 
-                .imagenes{
+                .imagenes {
                     background: v.$naranja;
                 }
             }
         }
 
-        
+
     }
 }

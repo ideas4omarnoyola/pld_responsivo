@@ -2,190 +2,113 @@
 @use '../base/mixins' as m;
 
 
-#cont-pag16{
+#cont-pag16 {
     @include m.grid(2, 0);
 
-    @include m.tablet{
+    @include m.escritorio {
         @include m.grid(1, 0);
     }
 
-    #cont-izquierda{
-        height: 60rem;
+    #cont-izquierda {
 
-        @include m.escritorioHD{
-            height: 80rem;
-        }
-
-        @include m.tablet{
-            height: 50rem;
-        }
-
-        @include m.telefono{
-            height: 80rem;
-        }
-
-        #cont-img{
-            display: flex;
+        #cont-img {
+            @include m.grid(2, 1rem);
             background: v.$azul2;
-            height: 60%;
 
-            .personaje{
-                height: 70%;
-                margin-top: 11rem;
+            #globo1 {
 
-                @include m.escritorioHD{
-                    height: 60%;
-                    margin-top: 20rem;
-                }
+                padding: 1rem;
 
-                @include m.tablet{
-                    margin-top: 11rem;
-                    height: 65%;
-                }
-
-                @include m.telefono{
-                    position: absolute;
-                    overflow: hidden;
-                    margin-top: 28rem;
-                    height: 20rem;
-                    width: 20rem;
-                }
-            }
-
-            #globo1{
-                @include m.globoNegro(izquierda);
-                width: 50%;
-                height: 75%;
-                margin-top: 1rem;
-                margin-left: 1rem;
-                margin-right: 1rem;
-                margin-bottom: 1rem;
-
-                @include m.escritorioHD{
-                    height: 100%;
-                    margin-top: 0;
-                }
-
-                @include m.tablet{
-                    margin-right: 0;
-                    margin-left: 0;
-                    height: 50%;
-                    width: 100%;
+                p {
+                    @include m.globoNegro(izquierda);
                 }
             }
         }
 
-        #cont-gris{
-            position: relative;
+        #cont-gris-06 {
             background: v.$grisClaro;
-            height: 40%;
             display: flex;
-            align-items: center;
             justify-content: center;
-            
-            #globo2{
+            align-items: center;
+            padding: 2rem;
+
+            #globo2 {
                 @include m.globo(v.$vino, arriba);
                 @include m.resaltar(v.$blanco, 500);
-                width: 95%;
-                height: 85%;
-
-                @include m.escritorioHD{
-                    height: 90%;
-                    width: 90%;
-                }
-
-                @include m.tablet{
-                    width: 100%;
-                    height: 100%;
-                }
-                
             }
         }
     }
 
-    #cont-derecha{
-        #cont-vino{
+    #cont-derecha {
+
+        #cont-vino {
             display: flex;
             text-align: center;
             align-items: center;
             background: v.$vino;
+            padding: 2rem;
+            color: v.$blanco;
             height: 30%;
-            @include m.resaltar(v.$blanco, 500);
 
-            @include m.telefono{
-                margin-top: 1rem;
+            @include m.escritorio {
+                height: auto;
             }
         }
 
-        #clic-pag16{
+        #clic-pag16 {
             display: flex;
-            position: relative;
             justify-content: center;
             align-items: center;
-            width: 100%;
-            height: 30%;
             background: v.$azulClaro1;
-            text-align: center;
+            height: 40%;
+            padding: 1rem;
+            gap: 2rem;
 
-            @include m.tablet{
-                height: 7rem;
-            }
-
-            .mano-pag16{
-                position: relative;
-                left: -2rem;
-                width: 9%;
-                height: 25%;
-
-                @include m.escritorioHD{
-                    width: 12%;
-                }
-                @include m.tablet{
-                    height: 5rem;
-                    width: 6rem;
-                    margin-top: 1rem;
-                }
-
-                @include m.telefono{
-                    left: 1rem;
-                }
+            @include m.escritorio {
+                height: auto;
             }
         }
 
-        #botones{
-            align-items: center;
-            background: v.$azulPastel;
-            height: 40%;
-            text-align: center;
+        #botones {
+            height: 30%;
+            padding: 2rem;
 
-            h3{
-                position: relative;
-                top: 3rem;
+            @include m.escritorio {
+                height: auto;
             }
 
-            @include m.tablet{
-                margin-top: 1rem;
+            h3 {
+                text-align: center;
             }
 
-            .flex{
+            .flex {
                 display: flex;
-                margin-top: 7rem;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                margin-top: 2rem;
+                flex-wrap: wrap;
 
-                #btn-aseguradora{
-                    margin-left: 3rem;
-                    width: 50%;
-    
-                    @include m.telefono{
-                        margin-left: 1rem;
+                #btn-aseguradora {
+                    width: 40%;
+
+                    @include m.escritorioHD {
+                        width: 80%;
                     }
-                    a{
+
+                    a {
                         @include m.botones(v.$azulRey);
                     }
                 }
-                #btn-reaseguradora{
-                    width: 60%;
-    
-                    a{
+
+                #btn-reaseguradora {
+                    width: 40%;
+
+                    @include m.escritorioHD {
+                        width: 80%;
+                    }
+
+                    a {
                         @include m.botones(v.$verde);
                     }
                 }
@@ -194,47 +117,33 @@
     }
 }
 
-#cards-pag16{
+#cards-pag16 {
 
-    @include m.tablet{
+    @include m.tablet {
         margin-top: 1rem;
     }
-    .mapa-pag16{
+
+    .mapa-pag16 {
         display: none;
         opacity: 0;
         transition: all .3s ease;
     }
-    #aseguradora{
+
+    #aseguradora {
         @include m.conceptual(v.$azulRey);
-        height: 80rem;
+        margin-top: 2rem;
 
-        @include m.tablet{
-            height: 95rem;
-        }
-
-        @include m.telefono{
-            height: auto;
-        }
-
-        &.cuadros_activos{
+        &.cuadros_activos {
             display: block;
             opacity: 1;
         }
     }
-    #reaseguradora{
+
+    #reaseguradora {
         @include m.conceptual(v.$verde);
-        height: 70rem;
+        margin-top: 2rem;
 
-        @include m.tablet{
-            height: 80rem;
-        }
-
-        @include m.telefono{
-            height: auto;
-            margin-top: 1rem;
-        }
-
-        &.cuadros_activos{
+        &.cuadros_activos {
             display: block;
             opacity: 1;
         }

@@ -2,18 +2,18 @@
 @use '../base/mixins' as m;
 
 
-#pag07{
+#pag07 {
     overflow: hidden;
     position: relative;
     @include m.grid(2, 0);
     display: flex;
     height: 30rem;
 
-    @include m.telefono{
+    @include m.telefono {
         @include m.grid(1, 0);
     }
 
-    #conversacion{
+    #conversacion {
         overflow: hidden;
         position: relative;
         width: 40%;
@@ -21,18 +21,19 @@
         background: v.$azul2;
         padding: 2rem 2rem 0 2rem;
 
-        @include m.tablet{
+        @include m.tablet {
             width: 90%;
             height: 32rem;
         }
 
-        @include m.telefono{
+        @include m.telefono {
             width: 100%;
             height: 25rem;
         }
 
     }
-    #entrevista{
+
+    #entrevista {
         overflow: hidden;
         position: relative;
         width: 100%;
@@ -40,181 +41,132 @@
         @include m.resaltar(v.$blanco, 400);
         padding: 2rem 2rem 0 5rem;
 
-        h2{
+        h2 {
             padding: 2rem 2rem 4rem 2rem;
         }
     }
 }
 
-#pag07-2{
-    overflow: hidden;
-    position: relative;
+#pag07-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 2rem;
     background: v.$azulPastel;
-    height: 40rem;
+    padding: 2rem;
 
-    @include m.telefono{
+    @include m.escritorio {
+        flex-direction: column;
+    }
+
+    @include m.telefono {
         background: v.$colorFuente;
-        height: 60rem;
+        height: auto;
     }
 
-    .personaje{
-        overflow: hidden;
-        position: relative;
-        top: 2rem;
-        left: 10rem;
-        height: 50%;
+    #contenido-personaje06 {
         width: 20%;
-
-        @include m.escritorioHD{
-            left: 3rem;
-            height: 47%;
-            width: 18%;
-        }
-
-        @include m.tablet{
-            width: 25%;
-        }
-
-        @include m.telefono{
-            left: 22rem;
-            width: 33%;
-            height: 12rem;
-            top: 4rem;
-        }
-    }
-
-    #globo{
-        overflow: hidden;
-        position: relative;
-        width: 30rem;
-        top: 4rem;
-        left: 5rem;
-        @include m.globoNegro(arriba);
-
-        @include m.escritorioHD{
-            left: 2rem;
-            width: 20rem;
-            top: 2rem;
-        }
-
-        @include m.telefono{
-            top: -9rem;
-            left: 0;
-
-        }
-    }
-
-    #cont-blanco{
-        overflow: hidden;
-        position: relative;
         display: flex;
-        left: 40rem;
+        justify-content: start;
+        align-items: start;
+        flex-direction: column;
+
+        @include m.escritorio {
+            width: 100%;
+            flex-direction: row;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        #globo {
+            @include m.globoNegro(arriba);
+        }
+    }
+
+    #cont-blanco {
         background: v.$blanco;
+        padding: 2rem;
         border-radius: 2rem;
-        width: 70rem;
-        height: 90%;
-        top: -30rem;
+        width: 75%;
+        height: 40rem;
+        gap: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
 
-        @include m.escritorioHD{
-            width: 63rem;
-            left: 28rem;
-            top: -34rem;
+        @include m.escritorio {
+            width: 100%;
         }
 
-        @include m.tablet{
-            width: 43rem;
-            left: 25rem;
+        @include m.telefono {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: auto;
         }
 
-        @include m.telefono{
-            left: 0;
-            width: 34rem;
-            top: -5rem;
-            border-radius: 0;
-        }
-
-        .cuadros07{
+        .cuadros07 {
             display: none;
             opacity: 0;
             transition: all .3s ease;
         }
 
-        .btn01{
-            overflow: hidden;
-            position: relative;
-            left: 2rem;
-            top: 2rem;
+        .btn01 {
+
             width: 50%;
-            #btn-seguros{
-                overflow: hidden;
-                a{
+
+            @include m.telefono {
+                width: 80%
+            }
+
+            #btn-seguros {
+
+                a {
                     @include m.botonesPag07(v.$amarillo);
                     color: v.$colorFuente;
                 }
             }
 
-            #info-seguros{
-                overflow: hidden;
-                text-align: center;
-                padding-top: 4rem;
-                height: 15rem;
-                width: 90%;
-                top: 5rem;
-                position: relative;
+            #info-seguros {
                 background: v.$amarilloPag07;
+                margin-top: 2rem;
+                padding: 2rem;
 
-                @include m.tablet{
-                    top: 2rem;
-                    height: 18rem;
-                }
 
-                @include m.telefono{
-                    height: 20rem;
-                }
-            
-
-                &.cuadros_activos{
+                &.cuadros_activos {
                     display: block;
                     opacity: 1;
                 }
             }
         }
-        .btn02{
-            overflow: hidden;
-            position: relative;
-            top: 2rem;
+
+        .btn02 {
+
             width: 50%;
-            #btn-reaseguradora{
+
+            @include m.telefono {
+                width: 80%
+            }
+
+            #btn-reaseguradora {
                 overflow: hidden;
-                a{
+
+                a {
                     @include m.botonesPag07(v.$azulRey);
                 }
             }
-            #info-reaseguradora{
-                overflow: hidden;
-                text-align: center;
-                padding-top: 4rem;
-                height: 15rem;
-                width: 90%;
-                top: 5rem;
-                position: relative;
+
+            #info-reaseguradora {
                 background: v.$azulPag07;
+                margin-top: 2rem;
+                padding: 2rem;
 
-                @include m.tablet{
-                    top: 2rem;
-                    height: 18rem;
-                }
-
-                @include m.telefono{
-                    height: 20rem;
-                }
-                
-                &.cuadros_activos{
+                &.cuadros_activos {
                     display: block;
                     opacity: 1;
                 }
             }
         }
 
-    }    
+    }
 }
