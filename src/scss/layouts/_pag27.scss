@@ -1,7 +1,7 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
 
-.intro-pagina21{
+.intro-pagina21 {
 
     display: flex;
     justify-content: space-between;
@@ -9,106 +9,112 @@
     background: v.$azul2;
     position: relative;
 
-    &.ocultar{
+    &.ocultar {
         display: none;
     }
 
-    .cont-imagen{
+    .cont-imagen {
         width: 20%;
         margin: 0;
 
-        @include m.tablet{
+        @include m.tablet {
             width: 30%;
             align-self: flex-end;
         }
     }
 
-    .cont-mensaje{
+    .cont-mensaje {
         width: 70%;
         padding: 2rem;
 
-        p{
+        p {
             color: v.$blanco;
 
-            @include m.telefono{
+            @include m.telefono {
                 font-size: 1.4rem;
             }
         }
     }
 }
 
-.cont-btnInicio{
+.cont-btnInicio {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem;
 
-    &.ocultar{
+    &.ocultar {
         display: none;
     }
 
-    a{
+    a {
         @include m.boton(v.$amarillo);
     }
 }
 
-#cont-actividadRelacion{
+#cont-actividadRelacion {
 
-    &.ocultar{
+    &.ocultar {
         display: none;
     }
 
-    .instrucciones-mano{
+    .instrucciones-mano {
         border-radius: 0;
 
-        &.instrucciones1{
-            
-            @include m.telefono{
+        &.instrucciones1 {
+
+            @include m.telefono {
                 display: none;
             }
         }
-        
-        &.instrucciones2{
+
+        &.instrucciones2 {
             display: none;
 
-            @include m.telefono{
+            @include m.telefono {
                 display: flex;
             }
         }
     }
 
-    .actividad{
+    .actividad {
 
         background: v.$fondo2;
         @include m.grid(4, 1rem);
         padding: 1rem;
 
 
-        .cont-enunciados{
+        .cont-enunciados {
             grid-column: 1/3;
 
-            @include m.telefono{
+            @include m.telefono {
                 grid-column: 1/5;
             }
 
-            .filas{
+            .filas {
                 position: relative;
 
-                .enunciados{
+                .enunciados {
                     padding: 2rem;
                     margin-bottom: 2rem;
                     background: v.$blanco;
-                    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+                    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
                     cursor: pointer;
                     position: relative;
                     z-index: 1;
                     transition: all .3s ease;
 
-                    @include m.telefono{
+                    p {
+                        @include m.tablet {
+                            font-size: 1.2rem;
+                        }
+                    }
+
+                    @include m.telefono {
                         cursor: default;
                     }
-    
-                    &::after{
+
+                    &::after {
                         content: '';
                         background: v.$amarillo;
                         position: absolute;
@@ -117,31 +123,31 @@
                         width: 2rem;
                         height: 2rem;
                         border-radius: 50%;
-                        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+                        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
                         opacity: 0;
-                        transition: all .3s ease;   
+                        transition: all .3s ease;
                     }
-    
-                    &.seleccion{
+
+                    &.seleccion {
                         border: 1px solid v.$amarillo;
-    
-                        &::after{
+
+                        &::after {
                             opacity: 1;
                             left: 102%;
                         }
 
-                        @include m.telefono{
+                        @include m.telefono {
                             border: 0;
-                            
-                            &::after{
+
+                            &::after {
                                 display: none;
                             }
                         }
-    
+
                     }
                 }
 
-                .bloquear{
+                .bloquear {
                     display: none;
                     width: 100%;
                     height: 100%;
@@ -150,42 +156,42 @@
                     z-index: 10;
                     position: absolute;
 
-                    &.activo{
+                    &.activo {
                         display: block;
                     }
                 }
-    
-                .correcto{
+
+                .correcto {
                     padding: 2rem;
                     margin-bottom: 2rem;
                     background: v.$verde;
-                    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+                    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
                     color: v.$blanco;
                 }
 
-                .cont-conceptos{
+                .cont-conceptos {
                     display: none;
 
-                    .filas{
-                        
-                        div{
+                    .filas {
+
+                        div {
                             padding: 2rem;
                             text-align: center;
                             color: v.$blanco;
                             background: v.$azul1;
                             cursor: pointer;
 
-                            &.fondoCorrecto{
+                            &.fondoCorrecto {
                                 background: v.$verde;
                                 color: v.$blanco;
                             }
                         }
                     }
 
-                    @include m.telefono{
+                    @include m.telefono {
                         display: block;
 
-                        .filas{
+                        .filas {
                             margin: 1rem 0;
                         }
                     }
@@ -193,12 +199,12 @@
             }
         }
 
-        .cont-canvas{
+        .cont-canvas {
             grid-column: 3/4;
             height: 100%;
             position: relative;
 
-            .canvas{
+            .canvas {
                 width: 100%;
                 height: 100%;
                 display: block;
@@ -207,29 +213,29 @@
                 left: 0;
             }
 
-            @include m.telefono{
+            @include m.telefono {
                 display: none;
             }
         }
 
-        .cont-conceptos{
+        .cont-conceptos {
             grid-column: 4/5;
             display: flex;
             justify-content: space-evenly;
             flex-direction: column;
             align-items: center;
 
-            @include m.telefono{
+            @include m.telefono {
                 display: none;
             }
 
-            .filas{
+            .filas {
 
                 width: 100%;
                 position: relative;
 
-                .conceptos{
-                    height: 10rem;
+                .conceptos {
+                    min-height: 10rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -239,8 +245,15 @@
                     text-align: center;
                     cursor: pointer;
                     position: relative;
-    
-                    &::after{
+
+                    p {
+
+                        @include m.tablet {
+                            font-size: 1.2rem;
+                        }
+                    }
+
+                    &::after {
                         content: '';
                         background: v.$amarillo;
                         position: absolute;
@@ -249,32 +262,32 @@
                         width: 2rem;
                         height: 2rem;
                         border-radius: 50%;
-                        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+                        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
                         opacity: 0;
-                        transition: all .3s ease;   
+                        transition: all .3s ease;
                     }
-    
-                    &.seleccionado{
+
+                    &.seleccionado {
                         border: 1px solid v.$amarillo;
-    
-                        @include m.telefono{
+
+                        @include m.telefono {
                             border: none;
                         }
 
-                        &::after{
+                        &::after {
                             opacity: 1;
                             left: -10%;
 
-                            
-                            @include m.telefono{
-                                display: none;        
+
+                            @include m.telefono {
+                                display: none;
                             }
                         }
                     }
-                    
+
                 }
 
-                .bloquear{
+                .bloquear {
                     display: none;
                     width: 100%;
                     height: 100%;
@@ -283,12 +296,12 @@
                     left: 0;
                     position: absolute;
 
-                    &.activo{
+                    &.activo {
                         display: block;
                     }
                 }
-    
-                .correcto{
+
+                .correcto {
                     width: 100%;
                     height: 10rem;
                     display: flex;
@@ -304,12 +317,12 @@
     }
 }
 
-#mensaje21{
+#mensaje21 {
     display: none;
     position: relative;
     z-index: 1;
 
-    &.ver{
+    &.ver {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -317,23 +330,23 @@
         flex-wrap: wrap;
     }
 
-    .cont-imagen{
+    .cont-imagen {
         width: 30%;
         margin: 0;
 
-        @include m.escritorio{
+        @include m.escritorio {
             width: 50%;
             height: 40rem;
             margin: 0 auto;
-            order: 2;   
+            order: 2;
         }
 
-        @include m.telefono{
+        @include m.telefono {
             width: 70%;
         }
     }
 
-    &::after{
+    &::after {
         content: '';
         width: 100%;
         height: 40%;
@@ -343,23 +356,23 @@
         background: v.$azulRey;
         z-index: -1;
 
-        @include m.escritorio{
-            display: none;   
+        @include m.escritorio {
+            display: none;
         }
     }
 
-    .cont-mensaje{
+    .cont-mensaje {
         width: 60%;
         padding: 2rem;
 
-        @include m.escritorio{
+        @include m.escritorio {
             width: 100%;
-            order: 1;   
+            order: 1;
             background: v.$azulRey;
             margin-bottom: 2rem;
         }
 
-        p{
+        p {
             padding: 2rem;
             text-align: center;
             color: v.$blanco;
@@ -367,11 +380,11 @@
             font-weight: 700;
             border: 1px solid v.$blanco;
 
-            @include m.escritorio{
-                font-size: 1.8rem;   
+            @include m.escritorio {
+                font-size: 1.8rem;
             }
 
         }
     }
-    
+
 }

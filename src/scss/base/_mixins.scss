@@ -446,6 +446,11 @@
         background: $color;
         margin-bottom: 3.2rem;
 
+        h3 {
+            position: relative;
+            z-index: 10;
+        }
+
         &::after {
             content: '';
             width: 100%;

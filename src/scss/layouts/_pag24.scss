@@ -1,112 +1,116 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
 
-#instrucciones2-pag20{
+#instrucciones2-pag20 {
     background: v.$azulClaro1;
     height: 10rem;
     display: flex;
     margin-top: 1rem;
     padding: 2rem;
 
-    @include m.telefono{
+    @include m.telefono {
         margin-top: 2rem;
         padding: 1rem;
         height: 13rem;
     }
 
-    p{
+    p {
         margin: auto;
 
-        @include m.tablet{
+        @include m.tablet {
             margin-left: 2rem;
         }
     }
 
-    img{
-        @include m.telefono{
+    img {
+        @include m.telefono {
             width: 0;
             height: 0;
         }
     }
 }
 
-#cont-diferencias{
+#cont-diferencias {
     @include m.grid(3, 1rem);
     position: relative;
     top: 3rem;
 
-    @include m.telefono{
+    @include m.tablet {
         display: none;
     }
 
-    .info{
+    .info {
         display: none;
         opacity: 0;
         transition: all .3s ease;
 
-        &.cuadros_activos{
+        &.cuadros_activos {
             display: block;
             opacity: 1;
         }
 
     }
-    .btn-pag20:hover{
+
+    .btn-pag20:hover {
         @include m.parpadeo;
     }
 
-    .cont-titulo{
+    .cont-titulo {
         padding: 1rem;
         height: 4rem;
         text-align: center;
-        @include m.resaltar(v.$blanco,700);
+        @include m.resaltar(v.$blanco, 700);
 
-        @include m.telefono{
+        @include m.telefono {
             padding: 0.5rem;
             height: 7;
         }
     }
 
-    .cont-info{
+    .cont-info {
         margin-top: 3rem;
         height: 10rem;
 
-        .info{
+        .info {
             height: 100%;
             padding: 2rem;
             text-align: center;
-            box-shadow: 3px 3px 6px -1px rgba(0,0,0,0.20);
-            background: v.$azulPastel; 
+            box-shadow: 3px 3px 6px -1px rgba(0, 0, 0, 0.20);
+            background: v.$azulPastel;
 
-            @include m.tablet{
-                padding: 0.5rem;
+            @include m.escritorio {
+                padding: 1rem;
+                font-size: 1.4rem;
             }
         }
 
     }
-    #lavado{
-        #titulo{
+
+    #lavado {
+        #titulo {
             background: v.$colorFuente;
         }
     }
 
-    #diferencias{
-        #titulo{
+    #diferencias {
+        #titulo {
             background: v.$naranja;
         }
-        .boton{
+
+        .boton {
             margin-top: 1rem;
             height: 10rem;
             text-align: center;
             cursor: pointer;
         }
 
-        .abajo{
+        .abajo {
             margin-top: 3rem;
         }
     }
 
-    #financiamiento{
-        #titulo{
+    #financiamiento {
+        #titulo {
             background: v.$azulRey;
         }
     }
@@ -114,84 +118,85 @@
 
 // Diferencias Vista Telefono
 
-#cont-diferenciasTel{
+#cont-diferenciasTel {
     display: none;
 
-    @include m.telefono{
+    @include m.tablet {
         display: inline;
         margin-top: 1rem;
 
-        .info{
+        .info {
             display: none;
             opacity: 0;
             transition: all .3s ease;
-    
-            &.cuadros_activos{
+
+            &.cuadros_activos {
                 display: block;
                 opacity: 1;
             }
-    
+
         }
-        .btn-pag20:hover{
+
+        .btn-pag20:hover {
             @include m.parpadeo;
         }
 
-        .boton{
+        .boton {
             cursor: pointer;
         }
 
-        .titulo{
+        .titulo {
             height: 4rem;
             padding: 1rem;
             text-align: center;
             @include m.resaltar(v.$blanco, 600);
         }
 
-        #lavado{
+        #lavado {
             background: v.$colorFuente;
         }
 
-        #financiamiento{
+        #financiamiento {
             background: v.$azulRey;
         }
 
-        .cont-info{
+        .cont-info {
             height: 8rem;
             text-align: center;
             padding: 1rem;
             background: v.$azulPastel;
         }
 
-        .boton{
+        .boton {
             text-align: center;
             background: v.$crema5;
         }
     }
 }
 
-#instrucciones3-pag20{
+#instrucciones3-pag20 {
     background: v.$azulClaro1;
     height: 10rem;
     display: flex;
     margin-top: 8rem;
     padding: 2rem;
 
-    @include m.telefono{
+    @include m.telefono {
         padding: 1rem;
         height: 13rem;
         margin-top: 4rem;
     }
 
-    p{
+    p {
         margin: auto;
 
-        @include m.tablet{
+        @include m.tablet {
             margin-left: 2rem;
         }
     }
 
-    img{
-        @include m.telefono{
+    img {
+        @include m.telefono {
             width: 0;
             height: 0;
         }
@@ -199,17 +204,17 @@
 }
 
 
-#cont-semejanzas{
+#cont-semejanzas {
     @include m.grid(4, 1rem);
     height: 75rem;
     background: v.$grisFondo3;
     margin-top: 2rem;
 
-    @include m.telefono{
+    @include m.telefono {
         display: none;
     }
 
-    #maletines{
+    #maletines {
         grid-column: 1/2;
         align-items: center;
         flex-direction: column;
@@ -217,99 +222,99 @@
         padding: 4rem;
         margin-top: 3rem;
 
-        @include m.tablet{
+        @include m.tablet {
             padding: 2rem;
             margin-top: 7rem;
         }
-            
-        .img-maletin{
+
+        .img-maletin {
             height: 15rem;
         }
-        
+
     }
 
-    #semejanzas{
+    #semejanzas {
         grid-column: 2/5;
         overflow: hidden;
 
-        .info{
+        .info {
             display: none;
             opacity: 0;
             transition: all .3s ease;
         }
-    
-        .btn2-pag20:hover{
+
+        .btn2-pag20:hover {
             @include m.parpadeo;
         }
 
-        #cont-titulos{
+        #cont-titulos {
             @include m.grid(3, 1rem);
-            
-            .titulo{
+
+            .titulo {
                 padding: 1rem;
                 height: 6rem;
                 text-align: center;
-                @include m.resaltar(v.$blanco,700);
+                @include m.resaltar(v.$blanco, 700);
             }
 
-            #lavado{
+            #lavado {
                 background: v.$colorFuente;
             }
 
-            #semejanza{
+            #semejanza {
                 background: v.$naranjaFuerte;
             }
 
-            #financiamiento{
+            #financiamiento {
                 background: v.$azulRey;
             }
         }
 
-        .cont-info{
+        .cont-info {
             height: 12rem;
             width: 96%;
             margin-top: 4rem;
             margin-left: 2rem;
 
-            @include m.tablet{
+            @include m.tablet {
                 margin-left: 1rem;
             }
 
-            .info{
+            .info {
                 text-align: center;
                 padding: 4rem;
                 background: v.$crema4;
-                box-shadow: 3px 3px 6px -1px rgba(0,0,0,0.20);
+                box-shadow: 3px 3px 6px -1px rgba(0, 0, 0, 0.20);
 
-                @include m.tablet{
+                @include m.tablet {
                     padding: 2rem;
                 }
             }
         }
 
-        #maletin1{
-            &.cuadros_activos{
+        #maletin1 {
+            &.cuadros_activos {
                 display: block;
                 opacity: 1;
             }
         }
 
-        #maletin2{
-            &.cuadros_activos{
+        #maletin2 {
+            &.cuadros_activos {
                 display: block;
                 opacity: 1;
             }
         }
 
-        #maletin3{
-            &.cuadros_activos{
+        #maletin3 {
+            &.cuadros_activos {
                 display: block;
                 opacity: 1;
             }
         }
 
-        #maletin4{
-            &.cuadros_activos{
+        #maletin4 {
+            &.cuadros_activos {
                 display: block;
                 opacity: 1;
             }
@@ -318,71 +323,74 @@
 }
 
 //Vista semejanzas Telefono
-#cont-semejanzasTel{
+#cont-semejanzasTel {
     display: none;
 
-    @include m.telefono{
+    @include m.telefono {
         display: inline;
 
-        .info{
+        .info {
             display: none;
             opacity: 0;
             transition: all .3s ease;
         }
-    
-        .btn2-pag20:hover{
+
+        .btn2-pag20:hover {
             @include m.parpadeo;
         }
 
-        .titulo{
+        .titulo {
             height: 4rem;
             padding: 1rem;
             text-align: center;
             @include m.resaltar(v.$blanco, 600);
         }
 
-        #lavado{
+        #lavado {
             background: v.$colorFuente;
         }
-        #semejanzas{
+
+        #semejanzas {
             background: v.$naranjaFuerte;
         }
-        #financiamiento{
+
+        #financiamiento {
             background: v.$azulRey;
         }
 
-        .info{
+        .info {
             text-align: center;
             padding: 0.5rem;
             background: v.$crema4;
             height: 10rem;
         }
-        #maletin1-Tel{
-            &.cuadros_activos{
+
+        #maletin1-Tel {
+            &.cuadros_activos {
                 display: block;
                 opacity: 1;
             }
         }
 
-        #maletin2-Tel{
-            &.cuadros_activos{
+        #maletin2-Tel {
+            &.cuadros_activos {
                 display: block;
                 opacity: 1;
             }
         }
 
-        #maletin3-Tel{
-            &.cuadros_activos{
+        #maletin3-Tel {
+            &.cuadros_activos {
                 display: block;
                 opacity: 1;
             }
         }
 
-        #maletin4-Tel{
-            &.cuadros_activos{
+        #maletin4-Tel {
+            &.cuadros_activos {
                 display: block;
                 opacity: 1;
             }
         }
-    }    
+    }
 }

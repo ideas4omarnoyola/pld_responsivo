@@ -2,124 +2,124 @@
 @use '../base/mixins' as m;
 
 
-#cont-azul{
+#cont-azul {
     background: v.$azulRey;
     height: 5rem;
 }
 
-#cont-pag06{
+#cont-pag06 {
     @include m.grid(4, 0);
 
-    @include m.tablet{
+    @include m.escritorioHD {
         @include m.grid(1, 0);
     }
 
-    @include m.telefono{
+    @include m.escritorio {
         display: none;
     }
 
-    #cont-rojo{
+    #cont-rojo {
         grid-column: 1/2;
         background: v.$naranjaPag03;
 
-        @include m.tablet{
-            height: 40rem;
-        }
 
-        #clic-pag06{
+
+        #clic-pag06 {
             display: flex;
             padding: 2rem;
             height: 10rem;
             background: v.$azulClaro2;
 
-            @include m.tablet{
+            @include m.escritorioHD {
                 margin: auto;
                 height: 8rem;
             }
 
-            .mano-pag06{
+            .mano-pag06 {
                 width: 7rem;
                 height: 5rem;
 
-                @include m.tablet{
+                @include m.escritorioHD {
                     width: 0;
                     height: 0;
                 }
             }
         }
 
-        .personaje{
+        .personaje {
             margin-top: 2rem;
 
-            @include m.tablet{
+            @include m.escritorioHD {
                 display: inline-block;
-                height: 30rem;
+                min-height: 30rem;
                 width: 20rem;
             }
         }
-        
+
     }
 
-    #cont-rosa{
+    #cont-rosa {
         grid-column: 2/5;
         display: flex;
         background: v.$rosaPag06;
+        padding: 2rem;
 
-        @include m.tablet{
+        @include m.escritorioHD {
             grid-column: 1/2;
+            min-height: 60rem;
         }
 
-        .libros{
+        .libros {
             @include m.grid(3, 1rem);
-            padding: 2rem;
             width: 100%;
             height: 100%;
 
-            .cuadro-pag06{
+            .cuadro-pag06 {
                 display: none;
                 opacity: 0;
                 transition: all .3s ease;
             }
 
-            .btn-pag06:hover{
+            .btn-pag06:hover {
                 @include m.parpadeo;
-            } 
+            }
 
-            .img-libro{
+            .img-libro {
                 width: 40%;
                 margin: auto;
             }
 
-            h4{
+            h4 {
                 text-align: center;
                 margin-top: 2rem;
             }
 
-            #cuadro1{
+            #cuadro1 {
                 @include m.cuadrosPag06(v.$azulPag06, v.$azulFuertePag06, left);
                 @include m.resaltar(v.$azulFuente, 600);
-    
-                &.cuadros_activos{
+
+                &.cuadros_activos {
                     display: block;
                     opacity: 1;
                 }
             }
 
 
-            #cuadro2{
+            #cuadro2 {
                 @include m.cuadrosPag06(v.$naranjaPag06, v.$naranjaFuertePag06, left);
                 @include m.resaltar(v.$naranjaFuentePag06, 600);
 
-                &.cuadros_activos{
+                &.cuadros_activos {
                     display: block;
                     opacity: 1;
                 }
             }
-            #cuadro3{
-                @include m.cuadrosPag06(v.$verdeClaroPag03, v.$verdeFuertePag06, center);
+
+            #cuadro3 {
+                @include m.cuadrosPag06(v.$verdeClaroPag03, v.$verdeFuertePag06, left);
                 @include m.resaltar(v.$verde, 600);
 
-                &.cuadros_activos{
+                &.cuadros_activos {
                     display: block;
                     opacity: 1;
                 }
@@ -128,65 +128,67 @@
     }
 }
 
-#cont-pag06Tel{
+#cont-pag06Tel {
     display: none;
 
-    @include m.telefono{
+    @include m.escritorio {
         display: inline;
-        #cont-img{
+
+        #cont-img {
             display: flex;
             width: 100%;
             height: 20rem;
             background: v.$naranjaPag03;
 
-            #clic-pag06Tel{
+            #clic-pag06Tel {
                 padding: 2rem;
                 width: 80%;
                 height: 50%;
                 display: flex;
                 background: v.$azulClaro2;
                 margin-left: 3rem;
-                
-                p{
+
+                p {
                     margin: auto;
                 }
             }
         }
 
-        .cuadrosPag06-tel{
+        .cuadrosPag06-tel {
             padding: 2rem;
             display: none;
             opacity: 0;
             transition: all .3s ease;
         }
 
-        #cuadro1-tel{
+        #cuadro1-tel {
             background: v.$azulPag06;
             @include m.resaltar(v.$azulRey, 500);
 
-            &.cuadros_activos{
+            &.cuadros_activos {
                 display: block;
                 opacity: 1;
             }
         }
-        #cuadro2-tel{
+
+        #cuadro2-tel {
             background: v.$naranjaPag06;
             @include m.resaltar(v.$naranjaFuentePag06, 500);
 
-            &.cuadros_activos{
+            &.cuadros_activos {
                 display: block;
                 opacity: 1;
             }
         }
-        #cuadro3-tel{
+
+        #cuadro3-tel {
             background: v.$verdePag06;
             @include m.resaltar(v.$verde, 500);
 
-            &.cuadros_activos{
+            &.cuadros_activos {
                 display: block;
                 opacity: 1;
             }
         }
     }
 }
-
